@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ashfaq Sons - Traditional Sweets & Bakery Since 1980 </title>
+    <meta name="description" content="Authentic Lahore sweets, bakery, pizza, and gourmet products. Traditional quality since 1980.">
+    
+    <style>
+        /* CSS */
+        :root {
+            /* Color Palette (from Jalal Sons) */
+            --primary-gold: #D4AF37;
+            --primary-gold-dark: #B8942F;
+            --primary-red: #C8102E;
+            --text-dark: #2C1810;
+            --text-light: #5A3F2F;
+            --bg-light: #FDF9F2;
+            --bg-white: #FFFFFF;
+            --bg-cream: #F8F4ED;
+            --border-light: #E8DCCA;
+            
+            /* Type Scale */
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            /* Spacing Scale (8pt system) */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+        }
+
+        /* === BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* === TYPOGRAPHY === */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: 1.5rem; }
+
+        /* === LAYOUT === */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* === HEADER === */
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) 0;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--space-lg);
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary-gold);
+            outline: 2px solid var(--primary-gold);
+            outline-offset: 2px;
+        }
+
+        .cta-button {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background: #a50d25;
+            transform: translateY(-1px);
+            outline: 2px solid var(--primary-red);
+            outline-offset: 2px;
+        }
+
+        /*   HERO SECTION   */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light) 100%);
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: var(--text-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: var(--space-xl);
+        }
+
+        /*   FEATURES SECTION  */
+        .features {
+            padding: var(--space-3xl) 0;
+            background: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+        }
+
+        .feature-card {
+            padding: var(--space-lg);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            font-size: 1.5rem;
+        }
+
+        /*  TESTIMONIALS   */
+        .testimonials {
+            padding: var(--space-3xl) 0;
+            background: var(--bg-light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+        }
+
+        .testimonial {
+            background: var(--bg-white);
+            padding: var(--space-lg);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .stars {
+            color: var(--primary-gold);
+            margin-bottom: var(--space-sm);
+        }
+
+        /*   SECONDARY CTA   */
+        .secondary-cta {
+            padding: var(--space-3xl) 0;
+            text-align: center;
+            background: var(--bg-white);
+        }
+
+        /*  FOOTER */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: var(--space-2xl) 0 var(--space-xl);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-section h3 {
+            color: var(--primary-gold);
+            margin-bottom: var(--space-md);
+        }
+
+        /*  RESPONSIVE  */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: var(--space-2xl) 0;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 var(--space-sm);
+            }
+            
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .features, .testimonials, .secondary-cta {
+                padding: var(--space-2xl) 0;
+            }
+        }
+
+        /*   ACCESSIBILITY   */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo"> Ashfaq Sons</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sweets">Sweets</a></li>
+                <li><a href="#bakery">Bakery</a></li>
+                <li><a href="#pizza">Pizza</a></li>
+                <li><a href="#gifts">Gifts</a></li>
+            </ul>
+            <a href="#" class="cta-button">Order Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Traditional Sweets & Bakery</h1>
+                <p class="hero-subtitle">Since 1980 | Authentic Lahore Flavors</p>
+                <a href="checkout.html" class="cta-button" style="font-size: 1.125rem; padding: 1rem 2rem;">Proceed to Checkout</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="sweets">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: var(--space-xl);">Why Choose Ashfaq Sons?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🥮</div>
+                    <h3>Traditional Recipes</h3>
+                    <p>45 years of authentic Lahore sweet-making tradition passed down through generations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest ingredients, handcrafted with love and care.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Delivered fresh to your doorstep across Lahore within 45 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: var(--space-xl);">Loved by Lahoris</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Best barfi in Lahore! The quality has never changed since my childhood."</p>
+                    <p><strong>- Ahmed R.</strong></p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Their gulab jamun is unbeatable. Perfect sweetness, perfect texture."</p>
+                    <p><strong>- Fatima K.</strong></p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Ordered for a wedding - 10kg of mixed mithai. Absolutely perfect!"</p>
+                    <p><strong>- Hassan S.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secondary CTA -->
+    <section class="secondary-cta">
+        <div class="container">
+            <h2 style="text-align: center;">Ready to Order?</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: var(--space-lg);">
+                Fresh sweets delivered to your door in 45 minutes
+            </p>
+            <div style="text-align: center;">
+                <a href="checkout.html" class="cta-button" style="font-size: 1.125rem;">Proceed to Checkout</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jalal Sons</h3>
+                    <p>Established 1980 | Authentic Lahore Sweets</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#" style="color: #ccc;">Sweets</a> | <a href="#" style="color: #ccc;">Bakery</a></p>
+                    <p><a href="#" style="color: #ccc;">Pizza</a> | <a href="#" style="color: #ccc;">Gifts</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Multiple locations across Lahore</p>
+                    <p>Order: 042-111-525-252</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid #444;">
+                <p>&copy; 2025 Ashfaq Sons. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
