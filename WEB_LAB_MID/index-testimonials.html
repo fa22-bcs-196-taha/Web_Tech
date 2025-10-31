@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ashfaq Sons - Traditional Sweets & Bakery Since 1980</title>
+  <meta name="description" content="Authentic Lahore sweets, bakery, pizza, and gourmet products.">
+
+  <!-- Font Awesome for Stars & Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-gold: #D4AF37;
+      --primary-red: #C8102E;
+      --text-dark: #2C1810;
+      --bg-light: #FDF9F2;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+      --space-xs: 0.5rem;
+      --space-sm: 0.75rem;
+      --space-md: 1.25rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:var(--font-body); line-height:1.6; background:var(--bg-light); color:#444; }
+    h1,h2,h3,h4,h5 { font-family:var(--font-heading); color:var(--text-dark); }
+    h1 { font-size:clamp(2.5rem,5vw,4rem); }
+    h2 { font-size:2.5rem; }
+    .container { max-width:1200px; margin:0 auto; padding:0 var(--space-md); }
+
+    /* Header */
+    header { background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.05); position:sticky; top:0; z-index:100; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:var(--space-md) 0; }
+    .logo { font-size:1.75rem; font-weight:700; color:var(--primary-gold); text-decoration:none; }
+    .nav-links { display:flex; gap:var(--space-lg); list-style:none; }
+    .nav-links a { color:var(--text-dark); text-decoration:none; font-weight:500; transition:color .3s; }
+    .nav-links a:hover { color:var(--primary-red); }
+    .cta-button {
+      background:var(--primary-red); color:white; padding:0.75rem 1.5rem; border-radius:50px;
+      text-decoration:none; font-weight:600; transition:background .3s;
+    }
+    .cta-button:hover { background:#a50d25; }
+
+    /* Hero */
+    .hero {
+      background:linear-gradient(rgba(253,249,242,0.95), rgba(253,249,242,0.95)),
+                  url('https://images.unsplash.com/photo-1622621734968-7676d2c0a20e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+      padding:var(--space-3xl) 0; text-align:center;
+    }
+    .hero h1 { margin-bottom:var(--space-md); }
+    .hero p { font-size:1.125rem; max-width:700px; margin:0 auto var(--space-lg); }
+
+    /* Features */
+    .features { padding:var(--space-2xl) 0; background:white; }
+    .features-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--space-xl);
+    }
+    .feature-card {
+      text-align:center; padding:var(--space-lg); border:1px solid #E8DCCA; border-radius:12px;
+      transition:transform .3s, box-shadow .3s;
+    }
+    .feature-card:hover { transform:translateY(-4px); box-shadow:0 10px 20px rgba(0,0,0,.1); }
+    .feature-card i { font-size:2.5rem; color:var(--primary-gold); margin-bottom:var(--space-md); }
+
+    /* Testimonials */
+    .testimonials { padding:var(--space-2xl) 0; background:#f8f5f0; }
+    .testimonial-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    #hiddenTestimonials.show {
+      display: block !important;
+      opacity: 1;
+    }
+
+    /* Secondary CTA */
+    .secondary-cta { padding:var(--space-2xl) 0; text-align:center; background:var(--primary-red); color:white; }
+    .secondary-cta h2 { color:white; }
+
+    /* Footer */
+    footer { background:var(--text-dark); color:#eee; padding:var(--space-2xl) 0 var(--space-lg); }
+    .footer-content {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:var(--space-xl);
+    }
+    .footer-links { list-style:none; }
+    .footer-links a { color:#ccc; text-decoration:none; display:block; margin-bottom:var(--space-sm); }
+    .footer-links a:hover { color:var(--primary-gold); }
+
+    /* Responsive */
+    @media (max-width:900px) { .nav-links{display:none;} }
+    @media (max-width:600px) { .container{padding:0 var(--space-sm);} .hero{padding:var(--space-2xl) 0;} }
+    @media (prefers-reduced-motion:reduce) { *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;} }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav class="container">
+    <a href="#" class="logo">Ashfaq Sons</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#sweets">Sweets</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="../LAB_ASSIGNMENT 2/checkout.html">Checkout</a></li>
+    </ul>
+    <a href="../LAB_ASSIGNMENT 2/checkout.html" class="cta-button">Order Now</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Since 1980: Pure Tradition in Every Bite</h1>
+    <p>Handcrafted mithai, fresh bakery, and gourmet delights from the heart of Lahore.</p>
+    <a href="../LAB_ASSIGNMENT 2/checkout.html" class="cta-button" style="font-size: 1.125rem; padding: 1rem 2rem;">Proceed to Checkout</a>
+    <div class="text-center mt-4">
+      <a href="../THEORY_ASSIGNEMNT 2/crud.html" class="btn btn-gold btn-lg">Open CRUD Manager</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="sweets">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Specialties</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-cookie-bite"></i>
+        <h3>Premium Mithai</h3>
+        <p>Freshly made with pure desi ghee and finest ingredients.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-bread-slice"></i>
+        <h3>Artisan Bakery</h3>
+        <p>Daily baked breads, cakes, and pastries with love.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-pizza-slice"></i>
+        <h3>Gourmet Pizza</h3>
+        <p>Authentic flavors with halal ingredients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CUSTOMER TESTIMONIALS SECTION ===== -->
+<section class="testimonials py-5" id="testimonials">
+  <div class="container">
+    <h2 class="text-center mb-5" style="font-family: var(--font-heading); color: var(--text-dark);">
+      Customer Testimonials
+    </h2>
+
+    <!-- Initially Visible (2) -->
+    <div class="row g-4" id="visibleTestimonials">
+      <div class="col-md-6">
+        <div class="testimonial-card p-4 border rounded shadow-sm bg-white">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Khan" class="rounded-circle me-3" width="60">
+            <div>
+              <h5 class="mb-0">Ahmed Khan</h5>
+              <div class="text-warning">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-muted">"Best mithai in Lahore! The Gulab Jamun melts in your mouth. Fresh and authentic!"</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="testimonial-card p-4 border rounded shadow-sm bg-white">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Saba Ali" class="rounded-circle me-3" width="60">
+            <div>
+              <h5 class="mb-0">Saba Ali</h5>
+              <div class="text-warning">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-muted">"Ordered for Eid — packaging was beautiful and sweets were fresh. Highly recommend!"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden Testimonials -->
+    <div class="row g-4 mt-3" id="hiddenTestimonials" style="display: none; opacity: 0; transition: all 0.5s ease;">
+      <div class="col-md-6">
+        <div class="testimonial-card p-4 border rounded shadow-sm bg-white">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Omar Farooq" class="rounded-circle me-3" width="60">
+            <div>
+              <h5 class="mb-0">Omar Farooq</h5>
+              <div class="text-warning">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-muted">"Their Barfi is unmatched. Perfect sweetness and texture. Will order again!"</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="testimonial-card p-4 border rounded shadow-sm bg-white">
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fatima Riaz" class="rounded-circle me-3" width="60">
+            <div>
+              <h5 class="mb-0">Fatima Riaz</h5>
+              <div class="text-warning">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-muted">"Fast delivery and amazing quality. My family loved the mixed box!"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="text-center mt-4">
+      <button id="viewMoreBtn" class="btn btn-outline-danger btn-lg px-5">
+        View More
+      </button>
+    </div>
+
+    <!-- Auto-Rotating Carousel -->
+    <div id="testimonialCarousel" class="carousel slide mt-5 d-none" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="text-center p-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mb-3" width="80">
+            <h5>Ahmed Khan</h5>
+            <p class="text-muted">"Best mithai in Lahore!"</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="text-center p-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mb-3" width="80">
+            <h5>Saba Ali</h5>
+            <p class="text-muted">"Perfect for Eid!"</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="text-center p-4">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" class="rounded-circle mb-3" width="80">
+            <h5>Omar Farooq</h5>
+            <p class="text-muted">"Barfi is unmatched!"</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="text-center p-4">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle mb-3" width="80">
+            <h5>Fatima Riaz</h5>
+            <p class="text-muted">"Fast delivery!"</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Secondary CTA -->
+<section class="secondary-cta">
+  <div class="container">
+    <h2>Ready for Fresh Sweets?</h2>
+    <p>Order now and get it delivered in under 60 minutes!</p>
+    <a href="../LAB_ASSIGNMENT 2/checkout.html" class="cta-button" style="font-size: 1.125rem;">Proceed to Checkout</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <h3>Ashfaq Sons</h3>
+        <p>Since 1980, serving authentic taste of Lahore.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sweets">Menu</a></li>
+          <li><a href="../LAB_ASSIGNMENT 2/checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>123 Main Road, Lahore<br>Phone: (042) 111-1980</p>
+      </div>
+    </div>
+    <p class="text-center mt-4 text-muted">&copy; 2025 Ashfaq Sons. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- View More + Carousel Script -->
+<script>
+document.getElementById('viewMoreBtn').addEventListener('click', function() {
+  const hidden = document.getElementById('hiddenTestimonials');
+  const carousel = document.getElementById('testimonialCarousel');
+  const btn = this;
+
+  if (hidden.style.display === 'none') {
+    hidden.classList.add('show');
+    btn.textContent = 'View Less';
+    carousel.classList.remove('d-none');
+  } else {
+    hidden.classList.remove('show');
+    setTimeout(() => { hidden.style.display = 'none'; }, 500);
+    btn.textContent = 'View More';
+    carousel.classList.add('d-none');
+  }
+});
+</script>
+
+</body>
+</html>
