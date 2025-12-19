@@ -1,0 +1,42 @@
+<h2 class="mb-4"><%= product ? 'Edit' : 'Add New' %> Product</h2>
+
+<form action="<%= product ? '/admin/products/edit/' + product._id : '/admin/products/add' %>" method="POST">
+  <div class="row g-3">
+    <div class="col-md-8">
+      <label class="form-label">Product Name</label>
+      <input type="text" name="name" class="form-control" value="<%= product ? product.name : '' %>" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Price (Rs.)</label>
+      <input type="number" name="price" class="form-control" value="<%= product ? product.price : '' %>" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Category</label>
+      <select name="category" class="form-select" required>
+        <option value="Sweets" <%= product && product.category === 'Sweets' ? 'selected' : '' %>>Sweets</option>
+        <option value="Bakery" <%= product && product.category === 'Bakery' ? 'selected' : '' %>>Bakery</option>
+        <option value="Pizza" <%= product && product.category === 'Pizza' ? 'selected' : '' %>>Pizza</option>
+        <option value="Namkeen" <%= product && product.category === 'Namkeen' ? 'selected' : '' %>>Namkeen</option>
+        <option value="Gifts" <%= product && product.category === 'Gifts' ? 'selected' : '' %>>Gifts</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Image URL (optional)</label>
+      <input type="url" name="image" class="form-control" value="<%= product ? product.image : '' %>" placeholder="https://...">
+    </div>
+    <div class="col-12">
+      <label class="form-label">Description</label>
+      <textarea name="description" class="form-control" rows="4" required><%= product ? product.description : '' %></textarea>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="featured" id="featured" <%= product && product.featured ? 'checked' : '' %>>
+        <label class="form-check-label" for="featured">Featured Product</label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-success me-2"><%= product ? 'Update' : 'Add' %> Product</button>
+      <a href="/admin/products" class="btn btn-secondary">Cancel</a>
+    </div>
+  </div>
+</form>
