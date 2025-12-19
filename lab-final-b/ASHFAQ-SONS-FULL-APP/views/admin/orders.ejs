@@ -1,0 +1,40 @@
+<%- include('../admin-layout') %>
+
+<h2 class="mb-4">Manage Orders</h2>
+
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Order ID</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% orders.forEach(order => { %>
+      <tr>
+        <td><%= order._id %></td>
+        <td><%= order.email %></td>
+        <td><%= order.createdAt.toLocaleDateString() %></td>
+        <td>Rs. <%= order.total %></td>
+        <td><span class="badge bg-<%= order.status === 'Delivered' ? 'success' : 'warning' %>"><%= order.status %></span></td>
+        <td>
+          <% if (order.status === 'Placed') { %>
+            <form action="/admin/orders/update-status/<%= order._id %>" method="POST" class="d-inline">
+              <input type="hidden" name="status" value="Processing">
+              <button class="btn btn-sm btn-primary">Mark Processing</button>
+            </form>
+          <% } else if (order.status === 'Processing') { %>
+            <form action="/admin/orders/update-status/<%= order._id %>" method="POST" class="d-inline">
+              <input type="hidden" name="status" value="Delivered">
+              <button class="btn btn-sm btn-success">Mark Delivered</button>
+            </form>
+          <% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

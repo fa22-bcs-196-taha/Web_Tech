@@ -1,0 +1,34 @@
+<div class="container py-5">
+  <h2>My Orders</h2>
+  <% if (!orders) { %>
+    <form method="POST" class="mb-4">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-danger">View Orders</button>
+        </div>
+      </div>
+    </form>
+  <% } else if (orders.length === 0) { %>
+    <p>No orders found for <%= email %></p>
+  <% } else { %>
+    <p>Orders for: <strong><%= email %></strong></p>
+    <table class="table">
+      <thead>
+        <tr><th>Order ID</th><th>Date</th><th>Total</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <% orders.forEach(order => { %>
+          <tr>
+            <td><%= order._id %></td>
+            <td><%= order.createdAt.toLocaleDateString() %></td>
+            <td>Rs. <%= order.total %></td>
+            <td><span class="badge bg-primary"><%= order.status %></span></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</div>
